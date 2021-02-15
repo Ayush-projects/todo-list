@@ -4,7 +4,7 @@ const mongo_url = require('./db/mongo');
 const mongoose = require('mongoose');
 const todos = require('./models/items')
 const bodyParser = require('body-parser')
-var PORT = 3000 || process.env.PORT
+var PORT = process.env.PORT || 3000
 app.set('view engine', 'ejs');
 mongoose.connect(mongo_url, { useUnifiedTopology: true, useNewUrlParser: true }).then(()=>{
     app.listen(PORT, ()=> {
